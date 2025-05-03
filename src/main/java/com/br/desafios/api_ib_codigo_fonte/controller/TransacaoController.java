@@ -22,8 +22,14 @@ public class TransacaoController {
     private TransacaoService transacaoService;
 
     @PostMapping("/transacao")
-    public ResponseEntity<?> criar(@RequestBody @Valid Transacao transacao) {
-        transacaoService.processar(transacao);
+    public ResponseEntity<?> salvar(@RequestBody @Valid Transacao transacao) {
+        transacaoService.salvar(transacao);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @DeleteMapping("/transacao")
+    public ResponseEntity<?> deletarTodas() {
+        transacaoService.deletarTodas();
+        return ResponseEntity.ok("Transações deletadas com sucesso.");
     }
 }

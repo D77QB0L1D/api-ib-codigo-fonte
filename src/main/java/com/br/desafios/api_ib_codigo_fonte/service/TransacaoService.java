@@ -13,8 +13,13 @@ public class TransacaoService {
     private TransacaoRepository transacaoRepository;
 
     @Transactional
-    public Transacao processar(Transacao transacao)  {
+    public Transacao salvar(Transacao transacao)  {
         transacaoRepository.save(transacao);
         return transacao;
+    }
+
+    @Transactional
+    public void deletarTodas() {
+        transacaoRepository.deleteAll();
     }
 }
