@@ -13,8 +13,8 @@ public class TransacaoService {
     private TransacaoRepository transacaoRepository;
 
     @Transactional
-    public Transacao salvar(Transacao transacao) {
-        return transacaoRepository.save(transacao);
+    public Transacao processar(Transacao transacao)  {
+        transacaoRepository.save(transacao);
+        return transacao;
     }
-
 }
