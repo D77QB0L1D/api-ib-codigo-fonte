@@ -1,4 +1,4 @@
-package com.br.desafios.api_ib_codigo_fonte.annotation;
+package com.br.desafios.api_ib_codigo_fonte.validacao;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

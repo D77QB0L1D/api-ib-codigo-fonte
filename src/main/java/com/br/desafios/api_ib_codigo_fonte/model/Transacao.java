@@ -1,6 +1,6 @@
 package com.br.desafios.api_ib_codigo_fonte.model;
 
-import com.br.desafios.api_ib_codigo_fonte.annotation.NaoDataFutura;
+import com.br.desafios.api_ib_codigo_fonte.validacao.NaoDataFutura;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
