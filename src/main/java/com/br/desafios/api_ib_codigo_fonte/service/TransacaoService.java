@@ -1,25 +1,32 @@
 package com.br.desafios.api_ib_codigo_fonte.service;
 
 import com.br.desafios.api_ib_codigo_fonte.model.Transacao;
-import com.br.desafios.api_ib_codigo_fonte.repository.TransacaoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import java.time.OffsetDateTime;
+import java.util.DoubleSummaryStatistics;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 @Service
 public class TransacaoService {
 
-    @Autowired
-    private TransacaoRepository transacaoRepository;
 
-    @Transactional
-    public Transacao salvar(Transacao transacao)  {
-        transacaoRepository.save(transacao);
-        return transacao;
+    public Queue<Transacao> transacoes = new ConcurrentLinkedDeque<>();
+
+    public void salvar(Transacao transacao)  {
+        transacoes.add(transacao);
     }
 
-    @Transactional
-    public void deletarTodas() {
-        transacaoRepository.deleteAll();
+    public void limpar() {
+        transacoes.clear();
+    }
+
+    public DoubleSummaryStatistics getEstatistica() {
+        OffsetDateTime agora = OffsetDateTime.now();
+        return transacoes.stream()
+                .filter(t -> t.getDataHora().isAfter(agora.minusSeconds(60)))
+                .mapToDouble(Transacao::getValor)
+                .summaryStatistics();
     }
 }
