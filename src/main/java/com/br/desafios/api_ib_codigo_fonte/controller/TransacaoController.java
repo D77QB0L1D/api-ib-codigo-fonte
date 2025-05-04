@@ -1,5 +1,6 @@
 package com.br.desafios.api_ib_codigo_fonte.controller;
 
+import com.br.desafios.api_ib_codigo_fonte.input.TransacaoInput;
 import com.br.desafios.api_ib_codigo_fonte.model.Transacao;
 import com.br.desafios.api_ib_codigo_fonte.service.TransacaoService;
 import jakarta.validation.Valid;
@@ -24,8 +25,8 @@ public class TransacaoController {
     }
 
     @PostMapping()
-    public ResponseEntity<Void> salvar(@RequestBody @Valid Transacao transacao) {
-        transacaoService.salvar(new Transacao(transacao.getValor(), transacao.getDataHora()));
+    public ResponseEntity<Void> salvar(@RequestBody @Valid TransacaoInput transacaoInput) {
+        transacaoService.salvar(new Transacao(transacaoInput.getValor(), transacaoInput.getDataHora()));
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 

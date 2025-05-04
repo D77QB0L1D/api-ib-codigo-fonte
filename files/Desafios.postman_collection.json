@@ -33,52 +33,13 @@
 			"name": "BANCO ITAÚ",
 			"item": [
 				{
-					"name": "Criar Transacao",
+					"name": "Criar Transacao v1",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"valor\": 1,\r\n    \"dataHora\": \"2025-05-04T00:09:00.000-03:00\"\r\n\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:8080/transacao"
-					},
-					"response": []
-				},
-				{
-					"name": "Estatística",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"valor\": 100,\r\n    \"dataHora\": \"2021-08-07T12:34:56.789-03:00\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:8080/estatisticas"
-					},
-					"response": []
-				},
-				{
-					"name": "Deletar Transacao",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"valor\": 120,\r\n    \"dataHora\": \"2021-08-07T12:34:56.789-03:00\"\r\n}",
+							"raw": "{\r\n    \"valor\": 100,\r\n    \"dataHora\": \"2025-05-04T11:10:00.000-03:00\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -104,6 +65,84 @@
 							}
 						},
 						"url": "http://localhost:8080/transacao"
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Transacao v3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/transacao"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Transacao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 120,\r\n    \"dataHora\": \"2021-08-07T12:34:56.789-03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/transacao"
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Transações",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/transacao/listar"
+					},
+					"response": []
+				},
+				{
+					"name": "Estatística",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 100,\r\n    \"dataHora\": \"2021-08-07T12:34:56.789-03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/estatisticas"
 					},
 					"response": []
 				}
