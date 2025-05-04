@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
 import java.util.*;
-import java.util.concurrent.ConcurrentLinkedDeque;
-import java.util.stream.Collectors;
 
 @Service
 public class TransacaoService {
@@ -15,7 +13,7 @@ public class TransacaoService {
     @Value("${transacao.duracao.segundos}")
     private Long segundos;
 
-    public Queue<Transacao> transacoes = new ConcurrentLinkedDeque<>();
+    public Collection<Transacao> transacoes = new ArrayList<>();
 
     public void salvar(Transacao transacao)  {
         transacoes.add(transacao);
