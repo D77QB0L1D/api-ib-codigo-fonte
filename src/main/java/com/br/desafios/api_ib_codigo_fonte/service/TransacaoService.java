@@ -4,14 +4,14 @@ import com.br.desafios.api_ib_codigo_fonte.model.Transacao;
 import org.springframework.stereotype.Service;
 
 import java.time.OffsetDateTime;
-import java.util.DoubleSummaryStatistics;
-import java.util.Queue;
+import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.stream.Collectors;
 
 @Service
 public class TransacaoService {
 
-    public Queue<Transacao> transacoes = new ConcurrentLinkedDeque<>();
+    public Collection<Transacao> transacoes = new ArrayList<>();
 
     public void salvar(Transacao transacao)  {
         transacoes.add(transacao);
@@ -19,6 +19,10 @@ public class TransacaoService {
 
     public void limpar() {
         transacoes.clear();
+    }
+
+    public Collection<Transacao> listar() {
+        return transacoes;
     }
 
     public DoubleSummaryStatistics getEstatistica() {

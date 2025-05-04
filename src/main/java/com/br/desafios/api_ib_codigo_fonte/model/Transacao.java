@@ -14,13 +14,13 @@ public class Transacao {
 
     @PositiveOrZero
     @NotNull
-    private double valor;
+    private Double valor;
 
     @NaoDataFutura
     @NotNull
     private OffsetDateTime dataHora;
 
-    public Transacao(double valor, OffsetDateTime dataHora) {
+    public Transacao(Double valor, OffsetDateTime dataHora) {
         this.valor = valor;
         this.dataHora = dataHora;
     }

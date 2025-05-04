@@ -8,12 +8,20 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 @RestController
 @RequestMapping("/transacao")
 public class TransacaoController {
 
     @Autowired
     private TransacaoService transacaoService;
+
+
+    @GetMapping("/listar")
+    public Collection<Transacao> listar() {
+        return transacaoService.listar();
+    }
 
     @PostMapping()
     public ResponseEntity<Void> salvar(@RequestBody @Valid Transacao transacao) {
