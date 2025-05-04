@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "cd9b7259-9edb-489e-ba16-adb58211ee7c",
+		"name": "Desafios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31667621"
+	},
+	"item": [
+		{
+			"name": "SENHA-SEGURA",
+			"item": [
+				{
+					"name": "Validar Senha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"senha\": \"1aA@1123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/senhas/validate-password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BANCO ITAÚ",
+			"item": [
+				{
+					"name": "Criar Transacao",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 1,\r\n    \"dataHora\": \"2025-05-04T00:09:00.000-03:00\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/transacao"
+					},
+					"response": []
+				},
+				{
+					"name": "Estatística",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 100,\r\n    \"dataHora\": \"2021-08-07T12:34:56.789-03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/estatisticas"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Transacao",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"valor\": 120,\r\n    \"dataHora\": \"2021-08-07T12:34:56.789-03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/transacao"
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Transacao v2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/transacao"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

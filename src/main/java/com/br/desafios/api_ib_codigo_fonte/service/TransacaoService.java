@@ -11,7 +11,6 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 @Service
 public class TransacaoService {
 
-
     public Queue<Transacao> transacoes = new ConcurrentLinkedDeque<>();
 
     public void salvar(Transacao transacao)  {
