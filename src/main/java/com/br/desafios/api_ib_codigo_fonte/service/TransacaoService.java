@@ -24,9 +24,11 @@ public class TransacaoService {
 
     public DoubleSummaryStatistics getEstatistica() {
         OffsetDateTime agora = OffsetDateTime.now();
-        return transacoes.stream()
+        DoubleSummaryStatistics statistics  = transacoes.
+        stream()
                 .filter(t -> t.getDataHora().isAfter(agora.minusSeconds(60)))
                 .mapToDouble(Transacao::getValor)
                 .summaryStatistics();
+        return  statistics;
     }
 }
