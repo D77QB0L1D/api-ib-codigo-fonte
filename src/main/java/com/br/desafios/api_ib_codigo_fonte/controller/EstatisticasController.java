@@ -2,6 +2,7 @@ package com.br.desafios.api_ib_codigo_fonte.controller;
 
 import com.br.desafios.api_ib_codigo_fonte.dto.EstatisticasDTO;
 import com.br.desafios.api_ib_codigo_fonte.service.TransacaoService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,11 @@ public class EstatisticasController {
     @Autowired
     private TransacaoService transacaoService;
 
+
+    @Operation(
+            summary = "Obter estatísticas",
+            description = "Retorna as estatísticas das transações da aplicação."
+    )
     @GetMapping()
     public ResponseEntity<EstatisticasDTO> getEstatisticas() {
         DoubleSummaryStatistics doubleSummaryStatistics = transacaoService.getEstatistica();
