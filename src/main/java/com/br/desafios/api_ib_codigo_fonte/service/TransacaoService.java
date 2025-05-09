@@ -29,6 +29,7 @@ public class TransacaoService {
 
     public DoubleSummaryStatistics getEstatistica() {
         OffsetDateTime agora = OffsetDateTime.now();
+
         DoubleSummaryStatistics statistics  = transacoes.
         stream()
                 .filter(t -> t.getDataHora().isAfter(agora.minusSeconds(segundos)))
@@ -36,4 +37,5 @@ public class TransacaoService {
                 .summaryStatistics();
         return  statistics;
     }
+
 }

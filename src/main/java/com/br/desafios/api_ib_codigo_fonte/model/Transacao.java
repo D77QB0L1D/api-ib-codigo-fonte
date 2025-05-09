@@ -14,4 +14,7 @@ public class Transacao {
     private Double valor;
     private OffsetDateTime dataHora;
 
+    public Transacao() {
+
+    }
 }
